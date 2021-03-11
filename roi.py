@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 
 import os 
 import itertools # Hmm do I need it
+import argparse
+import pathlib
 
 def select_roi(input_path, output_path, output_path_rgb, rgb_bands):
     img = envi.open(input_path)
@@ -37,8 +39,8 @@ def select_roi(input_path, output_path, output_path_rgb, rgb_bands):
 
 
 
-def main():
-    INPUTPATH = 'data/pille1_SWIR_320me_SN3517_6000_us_2019-01-21T162350_corr.hdr'
+def main(args):
+    INPUTPATH = args.filename
     OUTPUTPATH = 'data/test.hdr'
     OUTPUT_RGB = 'data/rgb.png'
 
@@ -53,4 +55,26 @@ def main():
     pass
 
 if __name__ == "__main__":
-    main()
+
+    parser = argparse.ArgumentParser(description='Hyperspectral Image Cropper')
+    parser.add_argument(
+        "-f",
+        dest="filename",
+        required=True,
+        metavar="FILE",
+        help="path to input file",
+        type=str,
+    )
+    """    parser.add_argument(
+        "opts",
+        help="Modify config options using the command-line",
+        default=None,
+        nargs=argparse.REMAINDER,
+    ) """
+
+    args = parser.parse_args()
+
+    output_dir = pathlib.Path('data/output')
+    output_dir.mkdir(exist_ok=True, parents=True)
+
+    main(args)
