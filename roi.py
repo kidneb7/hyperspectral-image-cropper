@@ -1,13 +1,11 @@
 import spectral
 import spectral.io.envi as envi
 import cv2
-import PIL
 
 import numpy as np 
 import matplotlib.pyplot as plt
 
 import os 
-import itertools # Hmm do I need it
 import argparse
 import pathlib
 

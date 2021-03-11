@@ -5,20 +5,31 @@ A simple Python tool based on [OpenCV](https://opencv.org/) and [Spectral Python
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-#### Create your hyperspectral dataset
-In `roi.py`, specify the file you from where you want to extract your ROIs from. Then
+#### Setting up the environment
+Using Anaconda, run
 
 ```bash
-python3 roi.py
+conda env create -f environment.yml
 ```
 
-to crop your data.
+from the repository root folder.
+
+#### Crop hyperspectral cubes
+From the repository root folder, run
+
+```bash
+python3 roi.py -f path_to_hyperspectral_file.hdr -m
+```
+
+to crop multiple regions of interest from `path_to_hyperspectral_file.hdr`. Before each crop, specify the name of the cropped file without file extension. Then in the OpenCV window, select ROI and confirm with `SPACE` or `ENTER`. Both a hyperspectral cube (`.hdr`) and an RGB preview (`.png`) will be saved to the `data/outputs/`  directory.
+
+> Omitting `-m` disables multiple crops and the output will be saved as `cropped.hdr`.
 
 
 ## ⛏️ Dependencies
-* python 3.8.3
-* numpy 1.18.1
-* matplotlib 3.1.3
+* python
+* numpy
+* matplotlib
 * OpenCV
 * Spectral Python (SPy)
 
@@ -26,5 +37,5 @@ to crop your data.
 - Bendik Austnes [@kidneb7](https://github.com/kidneb7)
 
 
-## :camera: Data provider
+## :camera: Example data provider
 - [Professor Lise Lyngsnes Randeberg](https://www.ntnu.edu/employees/lise.randeberg)
