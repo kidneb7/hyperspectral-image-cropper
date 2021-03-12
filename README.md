@@ -5,7 +5,7 @@ A simple Python tool based on [OpenCV](https://opencv.org/) and [Spectral Python
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-#### Setting up the environment
+### Setting up the environment
 Using Anaconda, run
 
 ```bash
@@ -14,7 +14,7 @@ conda env create -f environment.yml
 
 from the repository root folder.
 
-#### Crop hyperspectral cubes
+### Crop hyperspectral cubes
 From the repository root folder, run
 
 ```bash
@@ -25,6 +25,16 @@ to crop multiple regions of interest from `path_to_hyperspectral_file.hdr`. Befo
 
 > Omitting `-m` disables multiple crops and the output will be saved as `cropped.hdr`.
 
+### Crop with a specific aspect ratio
+> This feature is currently enabled in `--multi` mode only!
+
+From the repository root folder, run
+
+```bash
+python3 roi.py -f path_to_hyperspectral_file.hdr -m -a 150
+```
+
+for cropping with 150% aspect ratio (W/H).
 
 ## ⛏️ Dependencies
 * python
