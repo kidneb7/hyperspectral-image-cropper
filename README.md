@@ -37,5 +37,7 @@ to crop multiple regions of interest from `path_to_hyperspectral_file.hdr`. Befo
 - Bendik Austnes [@kidneb7](https://github.com/kidneb7)
 
 
-## :camera: Example data provider
-- [Professor Lise Lyngsnes Randeberg](https://www.ntnu.edu/employees/lise.randeberg)
+## :camera: Example data
+Example data is provided by [Professor Lise Lyngsnes Randeberg](https://www.ntnu.edu/employees/lise.randeberg) at the [Norwegian University of Science and Technology](https://www.ntnu.edu). Various pharmaceuticals were captured over 256 bands in the SWIR range using a [HySpex (NEO)](https://hyspex.com) hyperspectral camera. It is possible to identify the pharmaceuticals from their reflection spectrums.
+
+![](data/example_data.png)
